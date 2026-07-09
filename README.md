@@ -2,11 +2,11 @@
 
 En el diseño de circuitos digitales, los **bucles combinacionales** son secuencias de puertas lógicas donde la salida de una puerta se retroalimenta a su entrada, directa o indirectamente. Aunque a menudo se consideran problemáticos debido a la posibilidad de oscilaciones o estados inestables, pueden ser utilizados intencionadamente para crear elementos de memoria, como los **latches** y **flip-flops**.
 
-Este documento explora la implementación de elementos de memoria utilizando bucles combinacionales, específicamente a través de configuraciones de puertas Mux-OR, basándose en un debate técnico del grupo "FPGAwars: explorando el lado libre" [1].
+Este documento explora la implementación de elementos de memoria utilizando bucles combinacionales.
 
 ## Implementaciones Iniciales de Latches
 
-Inicialmente, propongo dos diseños de báscula SR (Set-Reset) utilizando bucles combinacionales en Icestudio. El primer diseño se basó en una configuración de multiplexores (Mux) con una puerta NOT, como se muestra a continuación:
+Inicialmente, propongo dos diseños de báscula SR (Set-Reset) utilizando bucles combinacionales en Icestudio. El primer diseño se basa en una configuración de multiplexores (Mux) con una puerta NOT colocada estratégicamente, como se muestra a continuación:
 
 ![Mux_as_DFF](https://github.com/Democrito/latch/blob/main/blob/main/assets/Mux_as_SR_memory.png)
 *Figura 1: Implementación inicial de una báscula SR con dos multiplexores.*
@@ -22,7 +22,7 @@ Estos circuitos demuestran cómo la retroalimentación combinacional puede ser u
 
 El siguiente paso es diseñar un latch, pero primero vamos a explicar cuál es la diferencia entre un latch y un flip-flop:  
 
-Un **latch** es un elemento de memoria: Mientras la entrada "cp" (clock pulse) esté a 1, la salida será transparente al dato que tenga en la entrada (data). En contraste, un **flip-flop** es un elemento de memoria sensible al flanco (transición de subida o bajada) de la señal de control (cp), capturando el dato de entrada solo en ese instante preciso. La principal diferencia radica en la entrada de disparo (cp): los flip-flops tienen una entrada de disparo que captura el dato en el instate que exista un cambio (ascendente o descendente), mientras que los latches refleja lo que tiene en la entrada mientras "cp" se mantenga a 1; cuando "cp" se ponga a 0, retendrá lo último que había en la entrada (data).
+Un **latch** es un elemento de memoria: Mientras la entrada clock esté a 1, la salida será transparente al dato que tenga en la entrada (data). En contraste, un **flip-flop** es un elemento de memoria sensible al flanco (transición o flanco de subida o bajada) de la señal de control (clock), capturando el dato de entrada solo en ese instante preciso. La principal diferencia radica en la entrada de disparo (clock): los flip-flops tienen una entrada de disparo que captura el dato en el instate que exista un cambio (ascendente o descendente), mientras que los latches refleja lo que tiene en la entrada mientras "clock" se mantenga a 1; cuando clock se ponga a 0, retendrá lo último que había en la entrada (data).
 
 ## Implementación de un Latch
 
@@ -55,8 +55,14 @@ Para experimentar con estos diseños en Icestudio, es necesario habilitar explí
 
 La exploración de los bucles combinacionales y su aplicación en la creación de latches y flip-flops es fundamental para comprender los fundamentos de la lógica secuencial. Aunque los bucles combinacionales pueden ser una fuente de desafíos en el diseño digital, su uso controlado permite la construcción de elementos de memoria esenciales. La distinción entre latches (sensibles al nivel) y flip-flops (sensibles al flanco) es crucial, y la implementación de latches maestro-esclavo ofrece una vía para lograr un comportamiento síncrono en el diseño de contadores y otros circuitos secuenciales.
 
+## Descarga de los Ejemplos Aquí Utilizados
+
+Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democrito/latch/tree/main/Download_ICEs)
+
 ## Referencias
 
-[1] DemocritoBinary, et al. "Mux-OR as DFF (Combinational Loops)". *FPGAwars: explorando el lado libre*, Google Groups. [https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw)  
-[2] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 1). [https://www.youtube.com/watch?v=ViIgxPSN4_A](https://www.youtube.com/watch?v=ViIgxPSN4_A)  
-[3] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 2). [https://www.youtube.com/watch?v=kVQ33be7ZNU](https://www.youtube.com/watch?v=kVQ33be7ZNU)  
+[Foro donde se exploró todo esto](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw)  
+[[2] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 1)](https://www.youtube.com/watch?v=ViIgxPSN4_A)  
+[[3] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 2)](https://www.youtube.com/watch?v=kVQ33be7ZNU)  
+
+
