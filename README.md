@@ -59,6 +59,10 @@ La exploración de los bucles combinacionales y su aplicación en la creación d
 
 Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democrito/latch/tree/main/Download_ICEs)
 
+## Descarga Icestudio
+
+[https://downloads.icestudio.io/](https://downloads.icestudio.io/)
+
 ## Referencias
 
 [Foro donde se exploró todo esto](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw)  
