@@ -6,43 +6,43 @@ Este documento explora la implementación de elementos de memoria utilizando buc
 
 ## Implementaciones Iniciales de Latches
 
-Inicialmente, se propusieron dos diseños de flip-flops tipo D (DFF) utilizando bucles combinacionales en Icestudio. El primer diseño se basó en una configuración de multiplexores (Mux) y puertas lógicas, como se muestra a continuación:
+Inicialmente, propongo dos diseños de báscula SR (Set-Reset) utilizando bucles combinacionales en Icestudio. El primer diseño se basó en una configuración de multiplexores (Mux) con una puerta NOT, como se muestra a continuación:
 
-![Mux_as_DFF](assets/Mux_as_DFF.png)
-*Figura 1: Implementación inicial de un Latch con Mux.*
+![Mux_as_DFF](https://github.com/Democrito/latch/blob/main/blob/main/assets/Mux_as_SR_memory.png)
+*Figura 1: Implementación inicial de una báscula SR con dos multiplexores.*
 
-Posteriormente, se identificó una simplificación en el diseño, reemplazando una parte del circuito con una puerta OR, resultando en una estructura más optimizada:
+Partiendo de este diseño y reemplazando una parte del circuito con una puerta OR, optenemos un circuito más simplificado:
 
-![logic_dff](assets/logic_dff.png)
-*Figura 2: Latch simplificado con una puerta OR.*
+![logic_dff](https://github.com/Democrito/latch/blob/main/blob/main/assets/SR_simplified_OR.png)
+*Figura 2: Báscula SR simplificado con una puerta OR.*
 
 Estos circuitos demuestran cómo la retroalimentación combinacional puede ser utilizada para retener un estado, actuando como una forma básica de memoria.
 
 ## Distinción entre Flip-Flop y Latch
 
-Durante el debate, se aclaró una distinción fundamental en la terminología. Aunque inicialmente se les denominó "flip-flops tipo D", se corrigió que estos circuitos son más precisamente **latches**.
+El siguiente paso es diseñar un latch, pero primero vamos a explicar cuál es la diferencia entre un latch y un flip-flop:  
 
-Un **latch** es un elemento de memoria sensible al nivel de la señal de control (o "clock"), lo que significa que su salida puede cambiar mientras la señal de control está activa. En contraste, un **flip-flop** es un elemento de memoria sensible al flanco (transición de subida o bajada) de la señal de control, capturando el dato de entrada solo en ese instante preciso. La principal diferencia radica en la entrada de disparo: los flip-flops tienen una entrada de disparo que captura el dato, mientras que los latches no la tienen en el mismo sentido.
+Un **latch** es un elemento de memoria: Mientras la entrada "cp" (clock pulse) esté a 1, la salida será transparente al dato que tenga en la entrada (data). En contraste, un **flip-flop** es un elemento de memoria sensible al flanco (transición de subida o bajada) de la señal de control (cp), capturando el dato de entrada solo en ese instante preciso. La principal diferencia radica en la entrada de disparo (cp): los flip-flops tienen una entrada de disparo que captura el dato en el instate que exista un cambio (ascendente o descendente), mientras que los latches refleja lo que tiene en la entrada mientras "cp" se mantenga a 1; cuando "cp" se ponga a 0, retendrá lo último que había en la entrada (data).
 
-## Implementación de un Latch "Verdadero"
+## Implementación de un Latch
 
-Considerando la aclaración, se presentó un esquema para un "latch verdadero" que ilustra mejor el comportamiento de retención de datos. Este circuito memoriza el dato de entrada ('DATA') cuando la señal de reloj ('CLOCK') está activa (en alto), y mantiene el último estado cuando 'CLOCK' está inactiva. Si 'DATA' es 1 y 'CLOCK' se activa, la salida se pone a 1. Si 'DATA' es 0 y 'CLOCK' se activa, la salida se pone a 0.
+Considerando la aclaración, presento un esquema de un latch que ilustra mejor el comportamiento de retención de datos. Este circuito memoriza el dato de entrada ('DATA') cuando la señal de reloj ('CLOCK') está activa (en alto), y mantiene el último estado cuando 'CLOCK' está inactiva. Si 'DATA' es 1 y 'CLOCK' se activa, la salida se pone a 1. Si 'DATA' es 0 y 'CLOCK' se activa, la salida se pone a 0.
 
-![true_latch](assets/true_latch.png)
+![true_latch](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)
 *Figura 3: Esquema de un Latch "verdadero".*
 
 ## Latch Maestro-Esclavo para Comportamiento por Flanco
 
 Para lograr un comportamiento sensible al flanco, similar al de un flip-flop, se puede construir un **latch maestro-esclavo**. Esta configuración utiliza dos latches básicos conectados en serie, donde el primer latch (maestro) captura el dato en un nivel del reloj y el segundo latch (esclavo) transfiere ese dato a la salida en el nivel opuesto o flanco del reloj. Esto permite que el cambio de estado ocurra en un flanco específico del reloj, evitando la transparencia del latch simple.
 
-![master_slave_latch](assets/master_slave_latch.png)
+![master_slave_latch](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)
 *Figura 4: Latch Maestro-Esclavo, logrando un comportamiento sensible al flanco.*
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo
 
-La aplicación de los latches maestro-esclavo se demostró mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro de estos latches en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un latch a otro, se clasifica como **asíncrono**.
+La aplicación de los latches maestro-esclavo lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un latch a otro, se clasifica como **asíncrono**.
 
-![contador_4bits](assets/contador_4bits.png)
+![contador_4bits](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)
 *Figura 5: Contador ascendente de 4 bits implementado con latches maestro-esclavo.*
 
 Aunque funcional, los contadores asíncronos pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido.
@@ -57,6 +57,6 @@ La exploración de los bucles combinacionales y su aplicación en la creación d
 
 ## Referencias
 
-[1] DemocritoBinary, et al. "Mux-OR as DFF (Combinational Loops)". *FPGAwars: explorando el lado libre*, Google Groups. [https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw)
-[2] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 1). [https://www.youtube.com/watch?v=ViIgxPSN4_A](https://www.youtube.com/watch?v=ViIgxPSN4_A)
-[3] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 2). [https://www.youtube.com/watch?v=kVQ33be7ZNU](https://www.youtube.com/watch?v=kVQ33be7ZNU)
+[1] DemocritoBinary, et al. "Mux-OR as DFF (Combinational Loops)". *FPGAwars: explorando el lado libre*, Google Groups. [https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw)  
+[2] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 1). [https://www.youtube.com/watch?v=ViIgxPSN4_A](https://www.youtube.com/watch?v=ViIgxPSN4_A)  
+[3] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 2). [https://www.youtube.com/watch?v=kVQ33be7ZNU](https://www.youtube.com/watch?v=kVQ33be7ZNU)  
