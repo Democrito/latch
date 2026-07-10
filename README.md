@@ -67,6 +67,7 @@ La exploración de los bucles combinacionales y su aplicación en la creación d
 ## Descarga de los Ejemplos Aquí Utilizados
 
 Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democrito/latch/tree/main/Download_ICEs)
+Yo creo que una de las mejores forma de **aprender y comprender** es "**haciendo**", interactuando con los circuitos y ver qué sucede, porque de esta manera puedes sacar tus propias conclusiones.
 
 ## Descarga Icestudio
 
