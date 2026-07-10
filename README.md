@@ -9,7 +9,7 @@ Este documento explora la implementación de elementos de memoria utilizando buc
 Inicialmente, propongo dos diseños de báscula SR (Set-Reset) utilizando bucles combinacionales en Icestudio. El primer diseño se basa en una configuración de multiplexores (Mux) con una puerta NOT colocada estratégicamente, como se muestra a continuación:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Mux_as_SR_memory.png)
-*Figura 1: Implementación inicial de una báscula SR con dos multiplexores de dos entradas cada una*
+*Figura 1: Implementación inicial de una báscula SR con dos multiplexores de dos entradas cada una.*
 
 Vamos a dar varios pasos hacia atrás para explicar el concepto de la memoria más simple. La memoria más simple es una OR con una de sus entradas en realimentación con la salida:
 
@@ -66,7 +66,8 @@ La exploración de los bucles combinacionales y su aplicación en la creación d
 
 ## Descarga de los Ejemplos Aquí Utilizados
 
-Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democrito/latch/tree/main/Download_ICEs)
+Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democrito/latch/tree/main/Download_ICEs)  
+
 Yo creo que una de las mejores forma de **aprender y comprender** es "**haciendo**", interactuando con los circuitos y ver qué sucede, porque de esta manera puedes sacar tus propias conclusiones.
 
 ## Descarga Icestudio
