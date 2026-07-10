@@ -28,7 +28,7 @@ Estos circuitos demuestran cómo la retroalimentación combinacional puede ser u
 
 El siguiente paso es diseñar un latch, pero primero vamos a explicar cuál es la diferencia entre un latch y un flip-flop:  
 
-Un **latch** es un elemento de memoria sensible al nivel de la señal de control (clock). Cuando el clock está a 1, el latch es **transparente**, es decir, la salida (Q) sigue continuamente el valor presente en la entrada de datos (D). Cuando el clock pasa a 0, deja de actualizar la salida y conserva el último valor que había en la entrada en el instante en que el clock cambió de estado.
+Un **latch** es un elemento de memoria sensible al nivel de la señal de control (clock). Cuando el clock está a 1, el latch es **transparente**, es decir, la salida (Q) sigue continuamente el valor presente en la entrada de datos (D). Cuando el clock pasa a 0, deja de actualizar la salida y conserva el último valor que había en la entrada.
 
 En cambio, un **flip-flop** es un elemento de memoria sensible al flanco de la señal de reloj. Esto significa que solo captura el valor de la entrada (D) en el instante en que se produce una **transición del clock**, ya sea de subida (0 → 1) o de bajada (1 → 0), según el tipo de flip-flop. Una vez capturado el dato, la salida permanece constante hasta que se produzca el siguiente flanco de reloj.
 
