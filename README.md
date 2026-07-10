@@ -9,7 +9,7 @@ Este documento explora la implementación de elementos de memoria utilizando buc
 La memoria más simple es una OR con una de sus entradas en realimentación con la salida:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/OR_as_memory.png)
-*Esta es la memoria más simple que existe pero tiene una limitación importante.*
+*Esta es la memoria más simple que existe pero tiene una limitación importante.
 
 Este tipo de memoria yo lo llamo "detector de presencia", en el sentido de que una vez que le damos un 1 a la entrada, permanecerá así indefinidamente hasta que cortemos la alimentación de todo el circuito.
 
@@ -17,6 +17,8 @@ Necesitamos de algún modo "cortar" a voluntad esa realimentación sin necesidad
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/SR_simplified_OR.png)
 *Báscula SR simplificado con una puerta OR.*
+
+Seguramente se podría simplificar un poco más a nivel de puertas lógicas para evitar un multiplexor, pero se trata de entender el concepto de la forma más simple.
 
 Estos circuitos demuestran cómo la retroalimentación combinacional puede ser utilizada para retener un estado, actuando como una forma básica de memoria.
 
