@@ -6,22 +6,17 @@ Este documento explora la implementación de elementos de memoria utilizando buc
 
 ## Implementaciones Iniciales de Latches
 
-Inicialmente, propongo dos diseños de báscula SR (Set-Reset) utilizando bucles combinacionales en Icestudio. El primer diseño se basa en una configuración de multiplexores (Mux) con una puerta NOT colocada estratégicamente, como se muestra a continuación:
-
-![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Mux_as_SR_memory.png)
-*Figura 1: Implementación inicial de una báscula SR con dos multiplexores de dos entradas cada una.*
-
-Vamos a dar varios pasos hacia atrás para explicar el concepto de la memoria más simple. La memoria más simple es una OR con una de sus entradas en realimentación con la salida:
+La memoria más simple es una OR con una de sus entradas en realimentación con la salida:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/OR_as_memory.png)
-*Figura 2: Esta es la memoria más simple que existe pero tiene una limitación importante.*
+*Esta es la memoria más simple que existe pero tiene una limitación importante.*
 
 Este tipo de memoria yo lo llamo "detector de presencia", en el sentido de que una vez que le damos un 1 a la entrada, permanecerá así indefinidamente hasta que cortemos la alimentación de todo el circuito.
 
 Necesitamos de algún modo "cortar" a voluntad esa realimentación sin necesidad de tener que apagar el circuito y para ello nos ayudaremos de un multiplexor de dos entradas:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/SR_simplified_OR.png)
-*Figura 3: Báscula SR simplificado con una puerta OR.*
+*Báscula SR simplificado con una puerta OR.*
 
 Estos circuitos demuestran cómo la retroalimentación combinacional puede ser utilizada para retener un estado, actuando como una forma básica de memoria.
 
@@ -38,21 +33,21 @@ En cambio, un **flip-flop** es un elemento de memoria sensible al flanco de la s
 Considerando la aclaración, presento un esquema de un latch que ilustra mejor el comportamiento de retención de datos. Este circuito memoriza el dato de entrada ('DATA') cuando la señal de reloj ('CLOCK') está activa (en alto), y mantiene el último estado cuando 'CLOCK' está inactiva. Si 'DATA' es 1 y 'CLOCK' se activa, la salida se pone a 1. Si 'DATA' es 0 y 'CLOCK' se activa, la salida se pone a 0.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)
-*Figura 4: Esquema de un Latch "verdadero".*
+*Esquema de un Latch "verdadero".*
 
 ## Latch Maestro-Esclavo para Comportamiento por Flanco
 
 Para lograr un comportamiento sensible al flanco, similar al de un flip-flop, se puede construir un **latch maestro-esclavo**. Esta configuración utiliza dos latches básicos conectados en serie, donde el primer latch (maestro) captura el dato en un nivel del reloj y el segundo latch (esclavo) transfiere ese dato a la salida en el nivel opuesto o flanco del reloj. Esto permite que el cambio de estado ocurra en un flanco específico del reloj, evitando la transparencia del latch simple.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)
-*Figura 5: Latch Maestro-Esclavo, logrando un comportamiento sensible al flanco.*
+*Latch Maestro-Esclavo, logrando un comportamiento sensible al flanco.*
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo
 
 La aplicación de los latches maestro-esclavo lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un latch a otro, se clasifica como **asíncrono**.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)
-*Figura 6: Contador ascendente de 4 bits implementado con latches maestro-esclavo.*
+*Contador ascendente de 4 bits implementado con latches maestro-esclavo.*
 
 Aunque funcional, los contadores asíncronos pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido.
 
