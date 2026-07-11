@@ -68,7 +68,7 @@ Para experimentar con estos diseños en Icestudio, es necesario habilitar explí
 
 ## Conclusión
 
-La exploración de los bucles combinacionales y su aplicación en la creación de latches y flip-flops es fundamental para comprender los fundamentos de la lógica secuencial. Aunque los bucles combinacionales pueden ser una fuente de desafíos en el diseño digital, su uso controlado permite la construcción de elementos de memoria esenciales. La distinción entre latches (sensibles al nivel) y flip-flops (sensibles al flanco) es crucial, y la implementación de latches maestro-esclavo ofrece una vía para lograr un comportamiento de disparo en vez de en niveles.
+La exploración de los bucles combinacionales y su aplicación en la creación de latches y flip-flops es fundamental para comprender los fundamentos de la lógica secuencial. Aunque los bucles combinacionales pueden ser una fuente de desafíos en el diseño digital, su uso controlado permite la construcción de elementos de memoria esenciales. La distinción entre latches (sensibles al nivel) y flip-flops (sensibles al flanco) es crucial, y la implementación de latches maestro-esclavo ofrece una vía para lograr un comportamiento de disparo en vez de en niveles, estando al mismo nivel que un flip-flop convencional. Con ellos se puede construir registros como memoria, registros de desplazamiento, contadores, etc. 
 
 ## Descarga de los Ejemplos Aquí Utilizados
 
@@ -83,7 +83,7 @@ Yo creo que una de las mejores forma de **aprender y comprender** es "**haciendo
 ## Referencias
 
 [Foro donde se exploró todo esto](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw)  
-[[2] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 1)](https://www.youtube.com/watch?v=ViIgxPSN4_A)  
-[[3] Video de YouTube sobre cómo habilitar Loops Combinacionales (Método 2)](https://www.youtube.com/watch?v=kVQ33be7ZNU)  
+[[2] Cómo habilitar Loops Combinacionales en Icestudio (Método 1)](https://www.youtube.com/watch?v=ViIgxPSN4_A)  
+[[3] Cómo habilitar Loops Combinacionales en Icestudio (Método 2)](https://www.youtube.com/watch?v=kVQ33be7ZNU)  
 
 
