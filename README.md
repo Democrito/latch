@@ -58,7 +58,7 @@ Aunque funcional, los contadores asíncronos pueden sufrir de retardos de propag
 La respuesta es sí, pero se sale fuera del temario por esta sencilla razón: Hay muchas técnicas para construir un contador síncrono con latch maestro-esclavo (como ya sabes se comporta como un flip-flop convencional), dependiendo de la velocidad de respuesta deseada (máxima frecuencia de contaje). El caso más estándar es usar un sumador binario donde cada bit de salida se registraría (memoriza esa salida) con un latch maestro-esclavo y se realimentaría al sumador. En el otro lado del sumador simplemente sumamos 1. En este caso, los latch maestro-esclavos simplemente memoriza la salida del contador, un latch maestro-esclavo por bit.
 
 ![](https://raw.githubusercontent.com/Democrito/latch/refs/heads/main/blob/main/assets/4bits_sincronous_counter_Master-Slave.png)
-*Contador síncrono de 4 bits usando un sumador y registrando la salida con latch maestro-esclavo.*
+*Contador síncrono de 4 bits usando un sumador y registrando las salidas con latch maestro-esclavos.*
 
 En la imagen podemos observar que hay dos tipos de bombeo (frecuencia de salida), he elegido otra vez el bombeo por nivel, pero funciona igual de bien con un bombeo por pulsos (tics).
 
