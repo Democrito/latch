@@ -62,9 +62,11 @@ Para lograr un comportamiento sensible al flanco, similar al de un flip-flop, ut
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)  
 *Latch Maestro-Esclavo, logrando un comportamiento sensible al flanco.*  
 
+Esto es muy importante de entender: La configuración "Maestro-Esclavo" deja de pertenecer a los latches (asíncrono) y se considera de pleno como flip-flops (síncrono).
+
 ## Contador de 4 Bits con Latches Maestro-Esclavo
 
-La aplicación de los latches **maestro-esclavos** lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un latch a otro, se clasifica como **asíncrono**.
+La aplicación de los latches **maestro-esclavos** lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un flip-flop a otro, se clasifica como **asíncrono**.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)  
 *Contador ascendente de 4 bits implementado con latches maestro-esclavo.*  
