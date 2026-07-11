@@ -45,7 +45,7 @@ En cambio, un **flip-flop** es un elemento de memoria sensible al flanco de la s
 
 ## Implementación de un Latch
 
-Considerando la aclaración, presento un esquema de un latch que ilustra mejor el comportamiento de retención de datos. Este circuito memoriza el dato de entrada DATA cuando la señal de reloj (CLOCK) está activa (en alto), y mantiene el último estado cuando CLOCK está inactiva (en bajo). En resumen, el valor (0 ó 1) que haya en DATA pasa a la salida siempre que CLOCK esté a '1' y retiene ese estado.
+Considerando la aclaración, presento un esquema de un latch que ilustra mejor el comportamiento de retención de datos. Este circuito memoriza el dato de entrada DATA cuando la señal de reloj (CLOCK) está activa (en alto), y mantiene el último estado cuando CLOCK está inactiva (en bajo). En resumen, el valor (0 ó 1) que haya en DATA pasa a la salida siempre que CLOCK esté a '1' y retiene ese estado al pasar a '0'.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)  
 *Evolución de latch SR a latch tipo D.*  
