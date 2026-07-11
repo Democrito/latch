@@ -31,7 +31,7 @@ Hay muchos tipos de memoria, entre ellas como la que acabamos de ver tipo **Set*
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Bascula%20o%20flip-flop%20tipo%20D.png)  
 *Latch/báscula tipo D y flip-flop tipo D.*  
 
-Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula (asíncrono) y suele tener como letras una 'c' (clock) o también 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende que por descarte es la entrada clock.
+Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula (asíncrono) y suele tener como letras una 'c' (clock) o también 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende que por descarte que es la entrada clock.
 
 Este tipo de memoria (como concepto y en especial los flip-flops) es muy utilizada a la hora de diseñar memorias, divisores de frecuencia, registros de desplazamiento, contadores, secuenciadores, etc.  
 
@@ -60,27 +60,27 @@ A priori, no es posible construir registros de desplazamiento, contadores o secu
 Para lograr un comportamiento sensible al flanco, similar al de un flip-flop, utilizaremos un **latch maestro-esclavo**. Esta configuración usa dos latches básicos conectados en serie, donde el primer latch (maestro) captura el dato en un nivel del reloj y el segundo latch (esclavo) transfiere ese dato a la salida en el nivel opuesto o flanco del reloj. Esto permite que el cambio de estado ocurra en un flanco específico del reloj, evitando la transparencia del latch simple.  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)  
-*Latch Maestro-Esclavo, logrando un comportamiento sensible al flanco.*  
+*Latch Maestro-Esclavo, logrando un comportamiento sensible al flanco, es decir, pasa a ser considerado como flip-flop.*  
 
-Esto es muy importante de entender: La configuración "Maestro-Esclavo" deja de pertenecer a los latches (asíncrono) y se considera de pleno como flip-flops (síncrono).
+La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono) pero esta configuración tiene de pleno el comportamiento de un flip-flop (síncrono).
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo
 
-La aplicación de los latches **maestro-esclavos** lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un flip-flop a otro, se clasifica como **asíncrono**.
+La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches maestros-esclavos en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un flip-flop a otro, se clasifica como **asíncrono**.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)  
 *Contador ascendente de 4 bits implementado con latches maestro-esclavo.*  
 
 Aunque funcional, los contadores asíncronos pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido.
 
-## ¿Se Puede Construir un Contador Síncrono con Latches?
+## ¿Se Puede Construir un Contador Síncrono con Latches Maestro-Esclavos?
 
 La respuesta es sí, y hay muchas técnicas para construir un contador síncrono con latches maestro-esclavos, que como ya sabes se comporta como un flip-flop convencional. El caso más estándar es usar un sumador binario donde cada bit de salida del sumador se memoriza con un latch maestro-esclavo, y la salida de cada latch se realimenta a una de las entradas del sumador. En el otro lado del sumador simplemente sumamos 1. En este caso, los latches maestro-esclavos sólo se encargan de memorizar la salida del sumador.
 
 ![](https://raw.githubusercontent.com/Democrito/latch/refs/heads/main/blob/main/assets/4bits_sincronous_counter_Master-Slave.png)  
-*Contador síncrono de 4 bits usando un sumador y registrando las salidas con latches maestro-esclavos.*  
+*Contador síncrono de 4 bits usando un sumador y memorizando las salidas con latches maestro-esclavos.*  
 
-En la imagen podemos observar que hay dos tipos de bombeo (frecuencia de salida), he elegido otra vez el bombeo por nivel, pero funciona igual de bien con un bombeo por pulsos (tics).
+En la imagen podemos observar que hay dos tipos de bombeo (representado como un corazón), he elegido otra vez el bombeo por nivel, pero funciona igual de bien con un bombeo por pulsos (tics).
 
 ## Habilitación de Bucles Combinacionales en Icestudio
 
