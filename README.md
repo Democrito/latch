@@ -43,9 +43,9 @@ Es habitual encontrar documentación técnica en la que el término *flip-flop* 
 
 El siguiente paso es diseñar un latch, pero primero toca explicar cuál es la diferencia entre un latch y un flip-flop:  
 
-Un **latch** es un elemento de memoria sensible al nivel de la señal de control (clock). Cuando el clock está a '1', el latch es **transparente**, es decir, lo que haya en **D** pasa a **Q**. Y cuando el clock lo llevamos a '0', deja de actualizar la salida y conserva el último valor que había en la entrada **D**.
+Un **latch tipo D** (última imagen de arriba) es un elemento de memoria sensible al nivel de la señal de control (clock). Cuando el clock está a '1', el latch es **transparente**, es decir, lo que haya en **D** pasa a **Q**. Y cuando el clock lo llevamos a '0', deja de actualizar la salida y conserva el último valor que había en la entrada **D**.
 
-En cambio, un **flip-flop** es un elemento de memoria sensible al flanco de la señal de reloj. Esto significa que sólo captura el valor de la entrada **D** en el instante en que se produce una **transición del clock**, ya sea de subida (0 → 1) o de bajada (1 → 0) según el tipo. Una vez capturado el dato, la salida (Q) permanece constante hasta que se produzca el siguiente flanco de reloj.
+En cambio, un **flip-flop tipo D** (última imagen de arriba) es un elemento de memoria sensible al flanco de la señal de reloj. Esto significa que sólo captura el valor de la entrada **D** en el instante en que se produce una **transición del clock**, ya sea de subida (0 → 1) o de bajada (1 → 0) según el tipo. Una vez capturado el dato, la salida (Q) permanece constante hasta que se produzca el siguiente flanco de reloj.
 
 ## Implementación de un Latch
 
