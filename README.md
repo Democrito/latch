@@ -22,8 +22,6 @@ Este circuito muestra que la retroalimentación combinacional puede emplearse pa
 
 Una de las principales ventajas de este diseño es que no presenta estados de indeterminación. En otras palabras, si las entradas **Set** y **Reset** permanecen simultáneamente en nivel alto ('1'), la señal **Reset** tiene prioridad, evitando así cualquier oscilación o comportamiento indefinido en el circuito. Esta propiedad aporta una mayor robustez al diseño, especialmente cuando posteriormente se transforme de un *latch* o báscula a un *flip-flop*.
 
-Es habitual encontrar documentación técnica en la que el término *flip-flop* se utiliza de forma genérica para referirse a cualquier elemento con capacidad de almacenamiento, incluso cuando, desde un punto de vista técnico, se trata de un *latch*. Este uso impreciso de la terminología puede generar confusión. Por ello, a lo largo de este documento se distinguirán claramente ambos conceptos y se empleará la nomenclatura adecuada en cada caso.
-
 ## Nomenclaturas
 
 En España es habitual utilizar el término **báscula** para referirse a los *latches* (literalmente, "pestillos"). A lo largo del texto se emplearán ambos términos de forma indistinta. Lo importante es tener presente que estos dispositivos pertenecen al grupo de las **memorias asíncronas**, ya que su funcionamiento depende del nivel de la señal de control (clock). En cambio, los dispositivos síncronos, cuyo comportamiento está gobernado por los flancos de una señal de reloj en lugar de por los niveles lógicos, reciben el nombre de **flip-flops**.
@@ -40,6 +38,8 @@ Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncron
 Este tipo de memoria (como concepto y en especial los flip-flops) es muy utilizada a la hora de diseñar memorias, divisores de frecuencia, registros de desplazamiento, contadores, secuenciadores, etc.  
 
 ## Distinción entre Flip-Flop y Latch
+
+Es habitual encontrar documentación técnica en la que el término *flip-flop* se utiliza de forma genérica para referirse a cualquier elemento con capacidad de almacenamiento, incluso cuando, desde un punto de vista técnico, se trata de un *latch*. Este uso impreciso de la terminología puede generar confusión. Por ello, a lo largo de este documento se distinguirán claramente ambos conceptos y se empleará la nomenclatura adecuada en cada caso.
 
 El siguiente paso es diseñar un latch, pero primero toca explicar cuál es la diferencia entre un latch y un flip-flop:  
 
