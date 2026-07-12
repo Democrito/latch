@@ -70,16 +70,18 @@ La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono)
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo
 
-La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop en toda regla, es decir, síncrono o sensible al flaco) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches maestros-esclavos en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se **propagan** secuencialmente de un flip-flop a otro, se clasifica como **asíncrono**.
+La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop en toda regla, es decir, síncrono o sensible al flaco) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que desees) de estos latches maestros-esclavos en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj.  
+
+Este tipo de contador, en el que los cambios de estado se **propagan** de manera secuencial de un *flip-flop* al siguiente, se clasifica como un **contador asíncrono**. Es importante no confundir el funcionamiento interno de cada elemento con la arquitectura global del contador. Aunque cada *flip-flop* está construido internamente mediante una configuración maestro-esclavo y, por tanto, presenta un comportamiento síncrono, el conjunto se considera asíncrono porque únicamente el primer *flip-flop* recibe directamente la señal de reloj. El resto de los dispositivos se disparan utilizando la salida del *flip-flop* anterior como señal de sincronización, lo que provoca una propagación escalonada de los cambios de estado.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)  
 *Contador ascendente de 4 bits implementado con latches maestro-esclavo.*  
 
-Aunque funcional, los contadores asíncronos pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido.
+Aunque funcional, los contadores asíncronos pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido (síncrono).
 
 ## ¿Se Puede Construir un Contador Síncrono con Latches Maestro-Esclavos?
 
-La respuesta es sí, y hay muchas técnicas para construir un contador síncrono con latches maestro-esclavos, que como ya sabes se comporta como un flip-flop convencional. El caso más estándar es usar un sumador binario donde cada bit de salida del sumador se memoriza con un latch maestro-esclavo, y la salida de cada latch se realimenta a una de las entradas del sumador. En el otro lado del sumador simplemente sumamos 1. En este caso, los latches maestro-esclavos sólo se encargan de memorizar la salida del sumador.
+La respuesta es que sí, y hay muchas técnicas para construir un contador síncrono con latches maestro-esclavos, que como ya sabes se comporta como un flip-flop convencional. El caso más estándar es usar un sumador binario donde cada bit de salida del sumador se memoriza con un latch maestro-esclavo, y la salida de cada latch maesto-esclavo se realimenta a una de las entradas del sumador. En el otro lado del sumador simplemente sumamos 1. En este caso, los latches maestro-esclavos sólo se encargan de memorizar la salida del sumador.
 
 ![](https://raw.githubusercontent.com/Democrito/latch/refs/heads/main/blob/main/assets/4bits_sincronous_counter_Master-Slave.png)  
 *Contador síncrono de 4 bits usando un sumador y memorizando las salidas con latches maestro-esclavos.*  
