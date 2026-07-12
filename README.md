@@ -13,14 +13,14 @@ La memoria más simple es una OR con una de sus entradas en realimentación con 
 
 A este tipo de memoria yo lo llamo "detector de presencia", en el sentido de que una vez que le damos un '1' a la entrada (SET), se encenderá el led y permanecerá así indefinidamente hasta que cortemos la alimentación de todo el circuito.
 
-Necesitamos de algún modo "cortar" a voluntad esa realimentación sin necesidad de tener que apagar el circuito y para ello nos ayudaremos de un multiplexor de dos entradas:
+Necesitamos de algún modo "cortar" a voluntad la realimentación para evitar tener que apagar el circuito (en circunstancias normales esto no tendría sentido) y para solucionarlo añadimos un multiplexor de dos entradas:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/SR_simplified_OR.png)  
 *Latch/báscula SR.*  
 
-Este tipo de circuito demuestra cómo la retroalimentación combinacional puede ser utilizada para retener un estado, actuando como una forma básica de memoria.  
+Este circuito muestra que la retroalimentación combinacional puede emplearse para conservar un estado, funcionando como un mecanismo elemental de almacenamiento de información.
 
-Una característica muy interesante que tiene este diseño es que carece de indeterminación, es decir, que si mantenemos a '1' tanto el Set como el Reset, predomina en este caso el Reset y no existe oscilaciones en el circuito (indeterminación). Esta característica le da mucha robusted cuando más adelante lo hagamos evolucionar de latch o báscula a flip-flop.
+Una de las principales ventajas de este diseño es que no presenta estados de indeterminación. En otras palabras, si las entradas **Set** y **Reset** permanecen simultáneamente en nivel alto ('1'), la señal **Reset** tiene prioridad, evitando así cualquier oscilación o comportamiento indefinido en el circuito. Esta propiedad aporta una mayor robustez al diseño, especialmente cuando posteriormente se transforme de un *latch* o báscula a un *flip-flop*.
 
 ## Nomenclaturas
 
