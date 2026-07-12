@@ -24,7 +24,7 @@ Una de las principales ventajas de este diseño es que no presenta estados de in
 
 ## Nomenclaturas
 
-En España a los **Latches** ("pestillos" en castellano) lo llamamos **Básculas**. Uso ambos términos, pero lo importante es entender que pertenecen al grupo de memorias llamadas **asíncronas**. Y todo lo que sea **síncrono**, es decir, que funciona por flancos (no por niveles), lo llamamos **flip-flop**.
+En España es habitual utilizar el término **báscula** para referirse a los *latches* (literalmente, "pestillos"). A lo largo del texto se emplearán ambos términos de forma indistinta. Lo importante es tener presente que estos dispositivos pertenecen al grupo de las **memorias asíncronas**, ya que su funcionamiento depende del nivel de la señal de control (clock). En cambio, los dispositivos síncronos, cuyo comportamiento está gobernado por los flancos de una señal de reloj en lugar de por los niveles lógicos, reciben el nombre de **flip-flops**.
 
 ## Memoria tipo D
 
