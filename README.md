@@ -18,7 +18,9 @@ Necesitamos de algún modo "cortar" a voluntad esa realimentación sin necesidad
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/SR_simplified_OR.png)  
 *Latch/báscula SR.*  
 
-Este tipo de circuito demuestra cómo la retroalimentación combinacional puede ser utilizada para retener un estado, actuando como una forma básica de memoria.
+Este tipo de circuito demuestra cómo la retroalimentación combinacional puede ser utilizada para retener un estado, actuando como una forma básica de memoria.  
+
+Una característica muy interesante que tiene este diseño es que carece de indeterminación, es decir, que si mantenemos a '1' tanto el Set como el Reset, predomina en este caso el Reset y no existe oscilaciones en el circuito (indeterminación). Esta característica le da mucha robusted cuando más adelante lo hagamos evolucionar de latch o báscula a flip-flop.
 
 ## Nomenclaturas
 
@@ -66,7 +68,7 @@ La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono)
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo
 
-La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches maestros-esclavos en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se propagan secuencialmente de un flip-flop a otro, se clasifica como **asíncrono**.
+La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**. Al conectar cuatro (o los que quieras) de estos latches maestros-esclavos en cascada, se puede crear un contador que incrementa su valor con cada flanco de reloj. Este tipo de contador, donde los cambios se **propagan** secuencialmente de un flip-flop a otro, se clasifica como **asíncrono**.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)  
 *Contador ascendente de 4 bits implementado con latches maestro-esclavo.*  
