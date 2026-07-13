@@ -107,7 +107,7 @@ La exploración de los bucles combinacionales y su aplicación en la creación d
 
 Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democrito/latch/tree/main/Download_ICEs)  
 
-Estoy convencido de que una de las mejores forma de **aprender y comprender** es "**haciendo**", interactuando con los circuitos y ver qué sucede, porque de esta manera puedes sacar tus propias conclusiones. Te presente que con la práctica se comprende mucho mejor la teoría.  
+Estoy convencido de que una de las mejores forma de **aprender y comprender** es "**haciendo**", interactuando con los circuitos y ver qué sucede, porque de esta manera puedes sacar tus propias conclusiones. Ten presente que con la práctica se comprende mucho mejor la teoría.  
 
 ## Descarga Icestudio
 
