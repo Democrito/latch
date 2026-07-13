@@ -93,7 +93,7 @@ La respuesta es **sí**, y hay muchas técnicas para construir un contador sínc
 ![](https://raw.githubusercontent.com/Democrito/latch/refs/heads/main/blob/main/assets/4bits_sincronous_counter_Master-Slave.png)  
 *Contador síncrono de 4 bits usando un sumador y memorizando las salidas con latches maestro-esclavos.*  
 
-En la imagen verás que hay dos tipos de bombeo (representados con un corazón), he elegido otra vez el bombeo por nivel lógico, pero funciona igual de bien con un bombeo por pulsos (tics).  
+En la imagen verás que hay dos tipos de bombeo (representados con un corazón), he elegido otra vez el bombeo de niveles lógicos, pero funciona igual de bien con un bombeo de pulsos (tics).  
 
 ## Habilitación de Bucles Combinacionales en Icestudio
 
