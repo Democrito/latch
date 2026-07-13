@@ -72,7 +72,7 @@ La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop tip
 
 Vamos a crear un contador de 4 bits de la forma más sencilla posible. Veamos el concepto de *Divisor de frecuencia*.
 
-[](https://github.com/Democrito/latch/blob/main/blob/main/assets/Divider2.png)
+![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Divider2.png)
 *Divisor de frecuencia. Divide la frecuencia entre 2.*  
 
 Para crear el divisor de frecuencia (divide la frecuencia a la mitad) tenemos que conectar la salida **/Q** a **D**, esto provocará que la frecuencia de entrada que entra por el **clock** salga dividida por la mitad en la salida **Q**.  
