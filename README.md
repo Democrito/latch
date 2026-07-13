@@ -30,7 +30,7 @@ En España es habitual utilizar el término **báscula** para referirse a los **
 
 Hay muchos tipos de memoria, entre ellas como la que acabamos de ver tipo **Set**-**Reset** (SR), y por nombrar otras están las tipo **D**, **T**, **JK**... Pero la que más nos va a interesar de ahora en adelante es la **tipo D**:
 
-![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Bascula%20o%20flip-flop%20tipo%20D.png)  
+![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Bascula%20y%20flip-flop%20tipo%20D.png)  
 *Latch/báscula tipo D y flip-flop tipo D.*  
 
 Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula (asíncrono) y suele tener una 'c' (clock) o bien 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende por descarte que es la entrada de reloj.  
