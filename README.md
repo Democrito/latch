@@ -35,11 +35,11 @@ Hay muchos tipos de memoria, entre ellas como la que acabamos de ver tipo **Set*
 
 Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula (asíncrono) y suele tener una 'c' (clock) o bien 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende por descarte que es la entrada de reloj.  
 
-## Distinción entre Flip-Flop y Latch
+## Distinción entre Flip-Flop y Latch 
 
 Es habitual encontrar documentación técnica en la que el término *flip-flop* se utiliza de forma genérica para referirse a cualquier elemento con capacidad de almacenamiento, incluso cuando, desde un punto de vista técnico se trata de un *latch*. Este uso impreciso de la terminología puede generar confusión. Por ello, a lo largo de este documento se distinguirán claramente ambos conceptos y se empleará la nomenclatura adecuada en cada caso.  
 
-El siguiente paso es diseñar un latch, pero primero toca explicar cuál es la diferencia entre un latch y un flip-flop:  
+El siguiente paso es diseñar un latch tipo D, pero primero toca explicar cuál es la diferencia entre un latch y un flip-flop:  
 
 Un **latch tipo D** (imagen de arriba, izquierda) es un elemento de memoria sensible al nivel lógico de la señal de control (clock). Cuando el clock está a '1', el latch es **transparente**, es decir, lo que haya en **D** pasa a **Q**. Y cuando el clock lo llevamos a '0', deja de actualizarse y conserva el último valor que había en la entrada **D**.  
 
@@ -51,6 +51,8 @@ Considerando la aclaración, presento un esquema de un **Latch tipo D** que ilus
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)  
 *Evolución de latch SR a latch tipo D.*  
+
+De ahora en adelante, cuando diga "latch" o "flip-flop" me estaré refiriendo siempre al "tipo D".
 
 ## Latch Maestro-Esclavo Tipo D para Comportamiento por Flanco
 
@@ -97,7 +99,7 @@ En la imagen verás que hay dos tipos de bombeo (representados con un corazón),
 
 ## Habilitación de Bucles Combinacionales en Icestudio
 
-Para experimentar con estos diseños en Icestudio, es necesario habilitar explícitamente la opción de "Loops Combinacionales". Se recomienda mantener esta opción deshabilitada por defecto, activándola sólo cuando se trabaje intencionadamente con este tipo de circuitos. Existen diferentes métodos para habilitar esta funcionalidad, como se detalla en los siguientes recursos de video [[1]](https://www.youtube.com/watch?v=ViIgxPSN4_A) y [[2]](https://www.youtube.com/watch?v=kVQ33be7ZNU), también lo encontrarás al final de esta página.  
+Para experimentar con estos diseños en Icestudio, es necesario habilitar explícitamente la opción de "Loops Combinacionales". Se recomienda mantener esta opción deshabilitada por defecto, activándola sólo cuando se trabaje intencionalmente con este tipo de circuitos. Existen diferentes métodos para habilitar esta funcionalidad, como se detalla en los siguientes recursos de video [[1]](https://www.youtube.com/watch?v=ViIgxPSN4_A) y [[2]](https://www.youtube.com/watch?v=kVQ33be7ZNU), también lo encontrarás al final de esta página.  
 
 ## Conclusión
 
