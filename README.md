@@ -58,9 +58,6 @@ De ahora en adelante, cuando diga "latch" o "flip-flop" me estaré refiriendo si
 
 A priori, no es posible construir registros de desplazamiento, divisor de frecuencia, contadores o secuenciadores con latches porque la entrada y salida son transparentes en cierto nivel lógico. La solución es pasar de asíncrono (latch) a síncrono (flip-flop), es decir, que funcione por flanco (ya sea de subida o de bajada).  
 
-* Asíncrono = Que se propaga, es transparente en cierto nivel lógico  
-* Síncrono  = Todos comparten la misma señal de control (clock) y es sensible al flanco (de subida o de bajada)  
-
 Para lograr un comportamiento sensible al flanco (como en un flip-flop) utilizaremos un **latch maestro-esclavo**. Esta configuración usa dos latches básicos conectados en serie, donde el primer latch (maestro) captura el dato en un nivel del reloj y el segundo latch (esclavo) transfiere ese dato a la salida en el nivel opuesto o flanco del reloj. Esto permite que el cambio de estado ocurra en un flanco específico del reloj, evitando la transparencia del latch simple.  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)  
