@@ -45,14 +45,14 @@ Un **latch tipo D** (imagen de arriba, izquierda) es un elemento de memoria sens
 
 En cambio, un **flip-flop tipo D** (imagen de arriba, derecha) es un elemento de memoria sensible al flanco de la señal de reloj. Esto significa que sólo captura el valor de la entrada **D** en el instante en que se produce una **transición del clock**, ya sea de subida (0 → 1) o de bajada (1 → 0) según el tipo. Una vez capturado el dato, la salida (Q) permanece constante hasta que se produzca el siguiente flanco de reloj.  
 
-## Diseño de un Latch
+## Diseño de un Latch Tipo D
 
 Considerando la aclaración, presento un esquema de un **Latch tipo D** que ilustra mejor el comportamiento de retención de datos. Este circuito memoriza el dato de entrada DATA cuando la señal de reloj (CLOCK) está en alto, y mantiene el último estado cuando CLOCK está en bajo. En resumen, el valor (0 ó 1) que haya en DATA pasa a la salida siempre que CLOCK esté a '1' y retiene ese estado al pasar a '0'.  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)  
 *Evolución de latch SR a latch tipo D.*  
 
-## Latch Maestro-Esclavo para Comportamiento por Flanco
+## Latch Maestro-Esclavo Tipo D para Comportamiento por Flanco
 
 A priori, no es posible construir registros de desplazamiento, divisor de frecuencia, contadores o secuenciadores con latches porque la entrada y salida son transparentes en cierto nivel lógico. La solución es pasar de asíncrono (latch) a síncrono (flip-flop), es decir, que funcione por flanco (ya sea de subida o de bajada).  
 
@@ -62,11 +62,11 @@ A priori, no es posible construir registros de desplazamiento, divisor de frecue
 Para lograr un comportamiento sensible al flanco (como en un flip-flop) utilizaremos un **latch maestro-esclavo**. Esta configuración usa dos latches básicos conectados en serie, donde el primer latch (maestro) captura el dato en un nivel del reloj y el segundo latch (esclavo) transfiere ese dato a la salida en el nivel opuesto o flanco del reloj. Esto permite que el cambio de estado ocurra en un flanco específico del reloj, evitando la transparencia del latch simple.  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)  
-*Latch Maestro-Esclavo, logrando un comportamiento sensible al flanco, es decir, pasa a ser considerado como flip-flop.*  
+*Latch tipo D Maestro-Esclavo, logrando un comportamiento sensible al flanco, es decir, pasa a ser considerado como flip-flop.*  
 
 La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono) pero esta configuración tiene el idéntico comportamiento de un flip-flop tipo D (síncrono).
 
-## Contador de 4 Bits con Latches Maestro-Esclavo
+## Contador de 4 Bits con Latches Maestro-Esclavo Tipo D
 
 La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop tipo D en toda regla, es decir, síncrono o sensible al flaco) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**.
 
