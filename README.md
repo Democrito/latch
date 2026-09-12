@@ -63,25 +63,33 @@ Para lograr un comportamiento sensible al flanco (como en un flip-flop) utilizar
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)  
 *Latch tipo D Maestro-Esclavo, logrando un comportamiento sensible al flanco, es decir, pasa a ser considerado como flip-flop.*  
 
-La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono) pero esta configuración tiene el idéntico comportamiento de un flip-flop tipo D (síncrono).
+La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono) pero esta configuración tiene el idéntico comportamiento de un flip-flop tipo D (síncrono).  
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo Tipo D
 
 La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop tipo D en toda regla, es decir, síncrono o sensible al flaco) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**.
 
-Vamos a crear un contador de 4 bits de la forma más sencilla posible. Veamos el concepto de *Divisor de frecuencia*.
+Vamos a crear un contador de 4 bits de la forma más sencilla posible.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Divider2.png)
 *Divisor de frecuencia. Divide la frecuencia entre 2.*  
 
 Para crear el divisor de frecuencia (divide la frecuencia a la mitad) tenemos que conectar la salida **/Q** a **D**, esto provocará que la frecuencia de entrada que entra por el **clock** salga dividida a la mitad en la salida **Q**.  
 
+Otra forma y mucho más sencilla de comprender el concepto de divisor de frecuencia es cuando lo utilizamos como encendido y apagado con un sólo pulsador.
+
+![](https://github.com/Democrito/latch/blob/main/blob/main/assets/on-of-one-button.png)
+
+Al comienzo el led permanecerá apagado, pero si apretamos el pulsador momentáneamente (ponemos a '1' un instante), el led se iluminará y permanecerá así aunque dejemos de apretar. Si después volvemos a apretar el pulsador el led se apagará. Esto sucederá tantas veces como pulsemos el pulsador: Se ilumina, se apaga, se ilumina, se apaga... Con un sólo pulsador conseguimos encender y apagar el led a voluntad. Si hubiésemos querido hacer esto con una báscula SR hubiéramos necesitado dos pulsadores (uno para encender *set* y otro para apagar *reset*).
+
+Debido a que los pulsadores e interruptores son elementos mecánicos, cada vez que cambiamos de estado el pulsador o interruptor se producirán rebotes (1s y 0s seguidos) hasta estabilizarse en una posición dada. Necesitamos eliminar los rebotes y para ello utilizamos un "anti-rebotes". Recuerda que el latch maestro-esclavo es sensible al flanco (es un flip-flop) y por esta razón necesitamos eliminar los rebotes de los contactos mecánicos del pulsador.
+
 Al conectar cuatro (o los que desees) de estos latches maestros-esclavos en cascada con la configuración de dividor de frecuencia, se puede crear un contador que incrementa su valor con cada flanco de reloj:  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)  
 *Contador ascendente de 4 bits implementado con latches maestro-esclavo.*  
 
-Este tipo de contador, en el que los cambios de estado se **propagan** de manera secuencial de un *flip-flop* al siguiente, se clasifica como un **contador asíncrono**. Es importante no confundir el funcionamiento interno de cada elemento con la arquitectura global del contador. Aunque cada *flip-flop* está construido internamente mediante una configuración maestro-esclavo y, por tanto, presenta un comportamiento síncrono, el conjunto se considera asíncrono porque únicamente el primer *flip-flop* recibe directamente la señal de reloj. El resto de los dispositivos se disparan utilizando la salida (Q) del *flip-flop* anterior como señal de sincronización, lo que provoca una propagación escalonada de los cambios de estado.  
+Este tipo de contador binario, en el que los cambios de estado se **propagan** de manera secuencial de un *flip-flop* al siguiente, se clasifica como un **contador asíncrono**. Es importante no confundir el funcionamiento interno de cada elemento con la arquitectura global del contador. Aunque cada *flip-flop* está construido internamente mediante una configuración maestro-esclavo y, por tanto, presenta un comportamiento síncrono, el conjunto se considera asíncrono porque únicamente el primer *flip-flop* recibe directamente la señal de reloj. El resto de los dispositivos se disparan utilizando la salida (Q) del *flip-flop* anterior como señal de sincronización, lo que provoca una propagación escalonada de los cambios de estado.  
 
 Lo que caracteriza una construcción **síncrona** es que todos los flip-flops han de tener la señal de clock conectadas a una misma señal de reloj. 
 
