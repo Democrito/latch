@@ -102,7 +102,7 @@ Aunque funcional, los contadores asíncronos (imagen izquierda) pueden sufrir de
 
 La respuesta es **sí**, y hay muchas técnicas para construir un contador síncrono con latches maestro-esclavos, que como ya sabes se comporta como un flip-flop convencional. El caso más estándar es usar un sumador binario donde cada bit de salida del sumador se memoriza con latches maestro-esclavos, y la salida de los latches maesto-esclavos se realimenta a una de las entradas del sumador. En el otro lado del sumador simplemente sumamos 1. En este caso, los latches maestro-esclavos sólo se encargan de memorizar la salida del sumador.  
 
-![](https://raw.githubusercontent.com/Democrito/latch/refs/heads/main/blob/main/assets/4bits_sincronous_counter_Master-Slave.png)  
+![](https://github.com/Democrito/latch/blob/main/blob/main/assets/4bits_synchronous_counter_Master-Slave.png)  
 *Contador síncrono de 4 bits usando un sumador y memorizando las salidas con latches maestro-esclavos.*  
 
 En la imagen verás que hay dos tipos de bombeo representados con un corazón. He elegido otra vez el bombeo de niveles lógicos (ondas cuadradas), pero funciona igual de bien con un bombeo de pulsos (tics).  
