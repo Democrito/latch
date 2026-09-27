@@ -92,7 +92,7 @@ Al conectar cuatro (o los que desees) de estos latches maestros-esclavos en casc
 Este tipo de contador binario, en el que los cambios de estado se **propagan** de manera secuencial de un *flip-flop* al siguiente, se clasifica como un **contador asíncrono**. Es importante no confundir el funcionamiento interno de cada elemento con la arquitectura global del contador. Aunque cada *flip-flop* está construido internamente mediante una configuración maestro-esclavo y, por tanto, presenta un comportamiento síncrono, el conjunto se considera asíncrono porque únicamente el primer *flip-flop* recibe directamente la señal de reloj. El resto de los dispositivos se disparan utilizando la salida (Q) del *flip-flop* anterior como señal de sincronización, lo que provoca una propagación escalonada de los cambios de estado.  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Synchronous%20vs%20Asynchronous.png)
-*Sistema asíncrono a la izquierda y sistema síncrono a la derecha.*  
+*Simplificación de sistema asíncrono a la izquierda y sistema síncrono a la derecha.*  
 
 Lo que caracteriza una construcción **síncrona** es que todos los flip-flops han de tener la señal de clock conectadas a una misma señal de reloj (imagen derecha). 
 
