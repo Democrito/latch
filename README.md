@@ -95,7 +95,7 @@ Este tipo de contador binario, en el que los cambios de estado se **propagan** d
 
 Lo que caracteriza una construcción **síncrona** es que todos los flip-flops han de tener la señal de clock conectadas a una misma señal de reloj (imagen derecha). 
 
-Aunque funcional, los contadores asíncronos pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido (síncrono).  
+Aunque funcional, los contadores asíncronos (imagen izquierda) pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido (síncrono).  
 
 ## ¿Se Puede Construir un Contador Síncrono con Latches Maestro-Esclavos?
 
