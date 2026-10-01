@@ -11,7 +11,7 @@ La memoria más simple es una puerta OR con una de sus entradas en realimentaci�
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/OR_as_memory.png)  
 *Esta es la memoria más simple que existe pero tiene una limitación importante.*  
 
-A este tipo de memoria la denomino: "Detector de presencia", en el sentido de que una vez que le damos un pulso de nivel alto (un '1' temporal) a la entrada SET, se encenderá el led y permanecerá así indefinidamente hasta que cortemos la alimentación del circuito.  
+A este tipo de memoria la denomino: "Enclavador fijo", en el sentido de que una vez que le damos un pulso de nivel alto (un '1' temporal) a la entrada SET, se encenderá el led y permanecerá así indefinidamente hasta que cortemos la alimentación del circuito.  
 
 En circunstancias normales esto no tendría sentido. Necesitamos de algún modo "cortar" a voluntad la realimentación para evitar tener que apagar el circuito y para solucionarlo añadimos un multiplexor de dos entradas:  
 
