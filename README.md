@@ -66,7 +66,7 @@ Para lograr un comportamiento sensible al flanco (como en un flip-flop) utilizar
 La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono) pero esta configuración tiene el idéntico comportamiento de un flip-flop tipo D (síncrono).  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch%20equal%20D%20flip-flop.png)
-*Ambos conceptos son idénticos, ambos son síncronos*
+*Ambos conceptos son idénticos, ambos son síncronos.*
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo Tipo D
 
