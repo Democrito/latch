@@ -126,6 +126,8 @@ Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democ
 
 Estoy convencido de que una de las mejores forma de **aprender y comprender** es "**haciendo**", interactuando con los circuitos y ver qué sucede, porque de esta manera puedes sacar tus propias conclusiones. Ten presente que con la práctica se comprende mucho mejor la teoría.  
 
+Te propongo un reto, intenta modificar el circuito contador síncrono y haz que en cualquier momento se pueda poner a cero (hacer un reset). La filosofía que aplica Elon Musk a sus empresas es equivocarse lo antes posible y tantas veces como sea necesario hasta lograr el objetivo. Esto requiere de mucha resistencia a la frustración (que es la peor consejera), y es lo que te hará llegar más lejos en tus conocimientos: la tenacidad.
+
 ## Descarga Icestudio
 
 [https://downloads.icestudio.io/](https://downloads.icestudio.io/)  
