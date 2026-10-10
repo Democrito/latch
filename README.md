@@ -136,7 +136,9 @@ De todas formas estamos en el foro para resolver cualquier duda. Un poco más ab
 
 [https://downloads.icestudio.io/](https://downloads.icestudio.io/)  
 
-## Referencias
+## Referencias  
+
+[Foro FPGAwars](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre)  
 
 [Foro donde se exploró todo esto](https://groups.google.com/g/fpga-wars-explorando-el-lado-libre/c/EykvQqULFlw)  
 
