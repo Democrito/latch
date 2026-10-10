@@ -128,6 +128,8 @@ Estoy convencido de que una de las mejores forma de **aprender y comprender** es
 
 Te propongo un reto, intenta modificar el circuito contador síncrono y haz que en cualquier momento se pueda poner a cero (hacer un reset). La filosofía que aplica Elon Musk a sus empresas es equivocarse lo antes posible y tantas veces como sea necesario hasta lograr el objetivo. Esto requiere de mucha resistencia a la frustración (que es la peor consejera), y es lo que te hará llegar más lejos en tus conocimientos: la tenacidad.
 
+Si quieres hacer cualquier cambio en un circuito dentro de Icestudio (modificar un módulo), primero clónalo. Lo copias con el típico [Control+C] y luego has de hacer un pegado especial para clonar que es pulsando [Control+Shift+V] y trabajas con ese módulo modificado. De otro modo, si modificas un módulo "original" luego no hay vuelta atrás y se puede convertir en un infierno.
+
 ## Descarga Icestudio
 
 [https://downloads.icestudio.io/](https://downloads.icestudio.io/)  
