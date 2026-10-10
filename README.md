@@ -130,6 +130,8 @@ Te propongo un reto, intenta modificar el circuito contador síncrono y haz que 
 
 Si quieres hacer cualquier cambio en un circuito dentro de Icestudio (modificar un módulo), primero clónalo. Lo copias con el típico [Control+C] y luego has de hacer un pegado especial para clonar que es pulsando [Control+Shift+V] y trabajas con ese módulo modificado. De otro modo, si modificas un módulo "original" luego no hay vuelta atrás y se puede convertir en un infierno.
 
+De todas formas estamos en el foro para resolver cualquier duda. Un poco más abajo dejo la dirección del foro. Abres una nueva conversación y expones tu problema. Estamos para eso y lo que haga falta.
+
 ## Descarga Icestudio
 
 [https://downloads.icestudio.io/](https://downloads.icestudio.io/)  
