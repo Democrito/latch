@@ -22,6 +22,8 @@ Este circuito muestra que la retroalimentación combinacional puede emplearse pa
 
 Una de las principales ventajas de este diseño es que no presenta estados de indeterminación. En otras palabras, si las entradas **Set** y **Reset** permanecen simultáneamente en nivel alto ('1'), la señal **Reset** tiene prioridad, evitando así cualquier oscilación o comportamiento indefinido en el circuito. Esta propiedad aporta una mayor robustez al diseño, especialmente cuando posteriormente se transforme de un *latch/báscula* a un *flip-flop*.  
 
+Para ver este circuito en su equivalente con puertas lógicas haz clic [**aquí**](https://github.com/Democrito/latch/blob/main/blob/main/assets/latch-SR.png)
+
 ## Nomenclaturas
 
 En España es habitual utilizar el término **báscula** para referirse a los **latches** (literalmente, "pestillos"). A lo largo del texto se emplearán ambos términos de forma indistinta. Lo importante es tener presente que estos dispositivos pertenecen al grupo de las **memorias asíncronas**.  
@@ -51,6 +53,8 @@ Considerando la aclaración, presento un esquema de un **Latch tipo D** que ilus
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)  
 *Evolución de latch SR a latch tipo D.*  
+
+Para ver este circuito en su equivalente con puertas lógicas haz clic [**aquí**](https://github.com/Democrito/latch/blob/main/blob/main/assets/D_type_Latch.png)
 
 De ahora en adelante, cuando diga "latch" o "flip-flop" me estaré refiriendo siempre al "tipo D".
 
