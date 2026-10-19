@@ -73,7 +73,7 @@ La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono)
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch%20equal%20D%20flip-flop.png)
 *Ambos conceptos son idénticos, ambos son síncronos.*
 
-Ahora veremos cuándo un flip-flop se activa por flanco de subida y de bajada:
+Ahora veremos cuándo un flip-flop se activa por flanco de subida o de bajada:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Rising%20%26%20Falling%20edge.png)
 
