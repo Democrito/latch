@@ -76,12 +76,14 @@ La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono)
 Ahora veremos cuándo un flip-flop se activa por flanco de subida o de bajada:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Rising%20%26%20Falling%20edge.png)  
-*Distinción de flip-flops de flanco ascendente (izquierda) y flanco descendente (derecha)*
+*Distinción de flip-flops de flanco ascendente (izquierda) y flanco descendente (derecha).*
 
 Si en la señal de clock es directa significa que el flip-flop se activa cuando recibe un flanco de subida (en el instante que pasa de 0 a 1). Esto suele ser lo más común de encontrar.  
 Si en la señal de clock vemos una bolita significa que el flip-flop se activa cuando recibe un flanco descendente (en el instante que pasa de 1 a 0).  
 
 Esa bolita es la simplificación de una puerta NOT. Tanto si la ves en alguna entrada como en salidas, significa que invierte la lógica de esa señal.  
+
+En Icestudio normalmente (a no ser que el icono del módulo lo indique) no podremos poner bolitas para indicar que existan entradas y/o salidas negadas, entonces lo que haremos es indicarlo de alguna manera. Por ejemplo, en mi caso para indicar una /Q (Q negada) pongo "nq", donde la 'n' indica "negada" o lo que es lo mismo "lógica inversa" de la salida 'q'.
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo Tipo D
 
