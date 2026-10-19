@@ -1,3 +1,4 @@
+
 ## Introducción a los Bucles Combinacionales y Elementos de Memoria
 
 En el diseño de circuitos digitales, los **bucles combinacionales** son secuencias de puertas lógicas donde la salida de una puerta se retroalimenta a su entrada, directa o indirectamente. En el mundo de las FPGAs este tipo de diseño se considera problemático debido a la posibilidad de oscilaciones o estados inestables, sin embargo pueden ser utilizados intencionadamente para crear elementos de memoria, como los **latches** y **flip-flops**.  
@@ -20,22 +21,22 @@ En circunstancias normales esto no tendría sentido. Necesitamos de algún modo 
 
 Este circuito muestra que la retroalimentación combinacional puede emplearse para conservar un estado, funcionando como un mecanismo elemental de almacenamiento de información.
 
-Una de las principales ventajas de este diseño es que no presenta estados de indeterminación. En otras palabras, si las entradas **Set** y **Reset** permanecen simultáneamente en nivel alto ('1'), la señal **Reset** tiene prioridad, evitando así cualquier oscilación o comportamiento indefinido en el circuito. Esta propiedad aporta una mayor robustez al diseño, especialmente cuando posteriormente se transforme de un *latch/báscula* a un *flip-flop*.  
+Una de las principales ventajas de este diseño es que no presenta estados de indeterminación. En otras palabras, si las entradas **Set** y **Reset** permanecen simultáneamente en nivel alto ('1'), la señal **Reset** tiene prioridad, evitando así cualquier oscilación o comportamiento indefinido en el circuito. Esta propiedad aporta una mayor robustez al diseño, especialmente cuando posteriormente se transforme de un *latch/báscula* a *flip-flop*.  
 
 Para ver este circuito simplificado en su equivalente sólo con puertas lógicas haz clic [**aquí**](https://github.com/Democrito/latch/blob/main/blob/main/assets/latch-SR.png)
 
 ## Nomenclaturas
 
-En España es habitual utilizar el término **báscula** para referirse a los **latches** (literalmente, "pestillos"). A lo largo del texto se emplearán ambos términos de forma indistinta. Lo importante es tener presente que estos dispositivos pertenecen al grupo de las **memorias asíncronas**.  
+En España es habitual utilizar el término **báscula** o **biestable** para referirse a los **latches** (literalmente, "pestillos"). A lo largo del texto se emplearán ambos términos de forma indistinta. Lo importante es tener presente que estos dispositivos pertenecen al grupo de las **memorias asíncronas**.  
 
 ## Memoria tipo D
 
-Hay muchos tipos de memoria, entre ellas como la que acabamos de ver tipo **SR** (Set-Reset), y por nombrar otras están las tipo **D**, **T**, **JK**... Pero la que más nos va a interesar de ahora en adelante es la **tipo D**:
+Hay muchos tipos de memorias, entre ellas como la que acabamos de ver tipo **SR** (Set-Reset), y por nombrar otras están las tipo **D**, **T**, **JK**... Pero la que más nos va a interesar de ahora en adelante es la **tipo D**:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Bascula%20y%20flip-flop%20tipo%20D.png)  
 *Latch/báscula tipo D y flip-flop tipo D.*  
 
-Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula (asíncrono) y suele tener una 'c' (clock) o bien 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende por descarte que es la entrada de reloj.  
+Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula/biestable (asíncrono) y suele tener una 'c' (clock) o bien 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende por descarte que es la entrada de reloj.  
 
 ## Distinción entre Flip-Flop y Latch 
 
@@ -43,9 +44,9 @@ Es habitual encontrar documentación técnica en la que el término *flip-flop* 
 
 El siguiente paso es diseñar un latch tipo D, pero primero hay que explicar la diferencia entre un latch y un flip-flop:  
 
-Un **latch tipo D** (imagen de arriba, izquierda) es un elemento de memoria sensible al nivel lógico de la señal de control (clock). Cuando el clock está a '1', el latch es **transparente**, es decir, lo que haya en **D** pasa a **Q**. Y cuando el clock lo llevamos a '0', deja de actualizarse y conserva el último valor que había en la entrada **D**.  
+Un **latch tipo D** (imagen de arriba, izquierda) es un elemento de memoria sensible al nivel lógico (1s y 0s) de la señal de control (clock). Cuando el clock está a '1', el latch es **transparente**, es decir, lo que haya en **D** pasa a **Q**. Y cuando el clock lo llevamos a '0', deja de actualizarse y conserva el último valor que había en la entrada **D**.  
 
-En cambio, un **flip-flop tipo D** (imagen de arriba, derecha) es un elemento de memoria sensible al flanco de la señal de reloj. Esto significa que sólo captura el valor de la entrada **D** en el instante en que se produce una **transición del clock**, ya sea de subida (0 → 1) o de bajada (1 → 0) según el tipo. Una vez capturado el dato, la salida (Q) permanece constante hasta que se produzca el siguiente flanco de reloj.  
+En cambio, un **flip-flop tipo D** (imagen de arriba, derecha) es un elemento de memoria sensible al flanco de la señal de reloj. Esto significa que sólo captura el valor de la entrada **D** en el instante en que se produce una **transición del clock**, ya sea de subida (0 → 1) o de bajada (1 → 0) según el tipo. Una vez capturado el dato, la salida (Q) permanece constante hasta que se produzca el siguiente flanco de reloj.
 
 ## Diseño de un Latch Tipo D
 
@@ -54,18 +55,18 @@ Considerando la aclaración, presento un esquema de un **Latch tipo D** que ilus
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)  
 *Evolución de latch SR a latch tipo D.*  
 
-Para ver este circuito simplificado en su equivalente sólo con puertas lógicas haz clic [**aquí**](https://github.com/Democrito/latch/blob/main/blob/main/assets/D_type_Latch.png)
+Para ver este circuito simplificado en su equivalente sólo con puertas lógicas haz clic [**aquí**](https://github.com/Democrito/latch/blob/main/blob/main/assets/D_type_Latch.png)  
 
-De ahora en adelante, cuando diga "latch" o "flip-flop" me estaré refiriendo siempre al "tipo D".
+De ahora en adelante, cuando diga "latch" o "flip-flop" me estaré refiriendo siempre al "tipo D".  
 
-## Latch Maestro-Esclavo Tipo D para Comportamiento por Flanco
+## Latch Maestro-Esclavo Tipo D para Comportamiento por Flanco  
 
 A priori, no es posible construir registros de desplazamiento, divisor de frecuencia, contadores o secuenciadores con latches porque la entrada y salida son transparentes en cierto nivel lógico. La solución es pasar de asíncrono (latch) a síncrono (flip-flop), es decir, que funcione por flanco, ya sea de subida o de bajada.  
 
 Para lograr un comportamiento sensible al flanco (como en un flip-flop) utilizaremos un **latch maestro-esclavo**. Esta configuración usa dos latches básicos conectados en serie, donde el primer latch (maestro) captura el dato en un nivel del reloj y el segundo latch (esclavo) transfiere ese dato a la salida en el nivel opuesto o flanco del reloj. Esto permite que el cambio de estado ocurra en un flanco específico del reloj, evitando la transparencia del latch simple.  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch.png)  
-*Latch tipo D Maestro-Esclavo, logrando un comportamiento sensible al flanco, es decir, pasa a ser considerado como flip-flop.*  
+*Latch tipo D Maestro-Esclavo, logrando un comportamiento sensible al flanco, es decir, pasa a convertirse en flip-flop.*  
 
 La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono) pero esta configuración tiene el idéntico comportamiento de un flip-flop tipo D (síncrono).  
 
@@ -74,7 +75,7 @@ La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono)
 
 ## Contador de 4 Bits con Latches Maestro-Esclavo Tipo D
 
-La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop tipo D en toda regla, es decir, síncrono o sensible al flaco) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**.
+La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop tipo D en toda regla, es decir, síncrono o lo que es lo mismo: sensible al flanco y no al nivel lógico) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**.
 
 Vamos a crear un contador de 4 bits de la forma más sencilla posible.
 
@@ -87,23 +88,23 @@ Otra forma y mucho más sencilla de comprender el concepto de divisor de frecuen
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/on-of-one-button.png)
 
-Al comienzo el led permanecerá apagado, pero si apretamos el pulsador momentáneamente (ponemos a '1' un instante), el led se iluminará y permanecerá así aunque dejemos de apretar. Si después volvemos a apretar el pulsador el led se apagará. Esto sucederá tantas veces como pulsemos el pulsador: Se ilumina, se apaga, se ilumina, se apaga... Con un sólo pulsador conseguimos encender y apagar el led a voluntad. Si hubiésemos querido hacer esto con una báscula SR hubiéramos necesitado dos pulsadores (uno para encender *set* y otro para apagar *reset*).
+Al comienzo el led permanecerá apagado, pero si apretamos el pulsador momentáneamente (ponemos a '1' un instante), el led se iluminará y permanecerá así aunque dejemos de apretar. Si después volvemos a apretar el pulsador el led se apagará. Esto sucederá tantas veces como pulsemos el pulsador: Se ilumina, se apaga, se ilumina, se apaga... Con un sólo pulsador conseguimos encender y apagar el led a voluntad. Si hubiésemos querido hacer esto con una báscula/biestable SR hubiéramos necesitado dos pulsadores, uno para encender *set* y otro para apagar *reset*.
 
-Debido a que los pulsadores e interruptores son elementos mecánicos, cada vez que cambiamos de estado el pulsador o interruptor se producirán rebotes (1s y 0s seguidos) hasta estabilizarse en una posición dada. Necesitamos eliminar los rebotes y para ello utilizamos un "anti-rebotes". Recuerda que el latch maestro-esclavo es sensible al flanco (es un flip-flop) y por esta razón necesitamos eliminar los rebotes de los contactos mecánicos del pulsador.
+Debido a que los pulsadores e interruptores son elementos mecánicos, cada vez que cambiamos de estado el pulsador o interruptor se producirán rebotes (1s y 0s aleatorios seguidos) hasta estabilizarse en una posición dada. Necesitamos eliminar los rebotes y para ello utilizamos un "anti-rebotes". Recuerda que el latch maestro-esclavo es sensible al flanco (es un flip-flop) y por esta razón necesitamos eliminar los rebotes de los contactos mecánicos del pulsador. Esto sólo es necesario cuando utilizamos elementos del mundo físico-mecánico en una entrada digital sensible a los flancos (flip-flops).
 
 Al conectar cuatro (o los que desees) de estos latches maestros-esclavos en cascada con la configuración de dividor de frecuencia, se puede crear un contador que incrementa su valor con cada flanco de reloj:  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/contador_4bits.png)  
 *Contador ascendente de 4 bits implementado con latches maestro-esclavo.*  
 
-Este tipo de contador binario, en el que los cambios de estado se **propagan** de manera secuencial de un *flip-flop* al siguiente, se clasifica como un **contador asíncrono**. Es importante no confundir el funcionamiento interno de cada elemento con la arquitectura global del contador. Aunque cada *flip-flop* está construido internamente mediante una configuración maestro-esclavo y, por tanto, presenta un comportamiento síncrono, el conjunto se considera asíncrono porque únicamente el primer *flip-flop* recibe directamente la señal de reloj. El resto de los dispositivos se disparan utilizando la salida (Q) del *flip-flop* anterior como señal de sincronización, lo que provoca una propagación escalonada de los cambios de estado.  
+Este tipo de contador binario, en el que los cambios de estado se **propagan** de manera secuencial de un flip-flop al siguiente, se clasifica como un **contador asíncrono**. Es importante no confundir el funcionamiento interno de cada elemento con la arquitectura global del contador. Aunque cada flip-flop está construido internamente mediante una configuración maestro-esclavo y, por tanto, presenta un comportamiento síncrono, el conjunto se considera asíncrono porque únicamente el primer *flip-flop* recibe directamente la señal de reloj. El resto de los dispositivos se disparan utilizando la salida (Q) del flip-flop anterior como señal de sincronización, lo que provoca una propagación escalonada de los cambios de estado.  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Synchronous%20vs%20Asynchronous.png)
 *Simplificación de sistema asíncrono a la izquierda y sistema síncrono a la derecha.*  
 
-Lo que caracteriza una construcción **síncrona** es que todos los flip-flops han de tener la señal de clock conectadas a una misma señal de reloj (imagen derecha). 
+__Lo que caracteriza una construcción **síncrona** es que todos los flip-flops han de tener la señal de clock conectadas a una misma señal de reloj (imagen derecha).__  
 
-Aunque funcional, los contadores asíncronos (imagen izquierda) pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido (síncrono).  
+Los contadores asíncronos (imagen izquierda) pueden sufrir de retardos de propagación acumulativos, lo que limita su velocidad y puede causar problemas en sistemas complejos. La alternativa ideal es una arquitectura **síncrona**, donde todos los elementos de memoria cambian de estado simultáneamente con el mismo flanco de reloj, garantizando un comportamiento más predecible y rápido (síncrono).  
 
 ## ¿Se Puede Construir un Contador Síncrono con Latches Maestro-Esclavos?
 
@@ -120,7 +121,7 @@ Para experimentar con estos diseños en Icestudio, es necesario habilitar explí
 
 ## Conclusión
 
-La exploración de los bucles combinacionales y su aplicación en la creación de latches y flip-flops es fundamental para comprender los fundamentos de la lógica secuencial. Aunque los bucles combinacionales pueden ser una fuente de desafíos en el diseño digital con FPGAs, su uso controlado permite la construcción de elementos de memoria esenciales. La distinción entre latches (sensibles al nivel) y flip-flops (sensibles al flanco) es crucial, y la implementación de latches maestro-esclavo ofrece una vía para lograr un comportamiento de disparo en vez de en niveles, estando al mismo nivel que un flip-flop convencional. Con ellos se puede construir memorias dinámicas, registros de desplazamiento, contadores, divisores de frecuencia, etc.  
+La exploración de los bucles combinacionales y su aplicación en la creación de latches y flip-flops es fundamental para comprender los fundamentos de la lógica secuencial. Aunque los bucles combinacionales pueden ser una fuente de desafíos en el diseño digital con FPGAs, su uso controlado permite la construcción de elementos de memoria esenciales. La distinción entre latches (sensibles al nivel) y flip-flops (sensibles al flanco) es crucial, y la implementación de latches maestro-esclavo ofrece una vía para lograr un comportamiento de disparo en vez de en niveles, lo que lo convierte en flip-flop convencional. Con ellos se puede construir memorias dinámicas, registros de desplazamiento, contadores, divisores de frecuencia, etc.  
 
 La forma más sencilla posible de comprender el funcionamiento **síncrono** es experimentar con registros de desplazamiento, porque con latches es imposible crear uno, sin embargo con flip-flops ocurre lo que esperarías.  
 
@@ -128,11 +129,11 @@ La forma más sencilla posible de comprender el funcionamiento **síncrono** es 
 
 Tienes todos los ejemplos en la carpeta [Download_ICEs](https://github.com/Democrito/latch/tree/main/Download_ICEs)  
 
-Estoy convencido de que una de las mejores forma de **aprender y comprender** es "**haciendo**", interactuando con los circuitos y ver qué sucede, porque de esta manera puedes sacar tus propias conclusiones. Ten presente que con la práctica se comprende mucho mejor la teoría.  
+Estoy convencido de que una de las mejores forma de **aprender y comprender** es "**haciendo**", interactuando con los circuitos y ver qué sucede, porque de esta manera puedes comprobar y sacar tus propias conclusiones. Ten presente que con la práctica se comprende mucho mejor la teoría.  
 
 Te propongo un reto, intenta modificar el circuito contador síncrono y haz que en cualquier momento se pueda poner a cero (hacer un reset). La filosofía que aplica Elon Musk a sus empresas es equivocarse lo antes posible y tantas veces como sea necesario hasta lograr el objetivo. Esto requiere de mucha resistencia a la frustración (que es la peor consejera), y es lo que te hará llegar más lejos en tus conocimientos: la tenacidad.
 
-Si quieres hacer cualquier cambio en un circuito dentro de Icestudio (modificar un módulo), primero clónalo. Lo copias con el típico [Control+C] y luego has de hacer un pegado especial para clonar que es pulsando [Control+Shift+V] y trabajas con ese módulo clonado. De otro modo, si modificas un módulo "original" luego no hay vuelta atrás y se puede convertir en un infierno.
+Si quieres hacer cualquier cambio en un circuito dentro de Icestudio (modificar un módulo), primero clónalo. Lo copias con el típico [Control+C] y luego has de hacer un pegado especial para clonarlo que es pulsando [Control+Shift+V] y trabajas con el módulo clonado. De otro modo, si modificas un módulo "original" luego no hay vuelta atrás y se puede convertir en un infierno.
 
 De todas formas estamos en el foro para resolver cualquier duda. Un poco más abajo dejo la dirección del foro. Abres una nueva conversación y expones tu problema. Estamos para eso y lo que haga falta.
 
