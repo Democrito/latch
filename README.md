@@ -98,7 +98,8 @@ Para crear el divisor de frecuencia (divide la frecuencia a la mitad) tenemos qu
 
 Otra forma y mucho más sencilla de comprender el concepto de divisor de frecuencia es cuando lo utilizamos como encendido y apagado con un sólo pulsador.
 
-![](https://github.com/Democrito/latch/blob/main/blob/main/assets/on-of-one-button.png)
+![](https://github.com/Democrito/latch/blob/main/blob/main/assets/on-of-one-button.png)  
+*Encendido y apagado de un led con sólo un pulsador.*
 
 Al comienzo el led permanecerá apagado, pero si apretamos el pulsador momentáneamente (ponemos a '1' un instante), el led se iluminará y permanecerá así aunque dejemos de apretar. Si después volvemos a apretar el pulsador el led se apagará. Esto sucederá tantas veces como pulsemos el pulsador: Se ilumina, se apaga, se ilumina, se apaga... Con un sólo pulsador conseguimos encender y apagar el led a voluntad. Si hubiésemos querido hacer esto con una báscula/biestable SR hubiéramos necesitado dos pulsadores, uno para encender *set* y otro para apagar *reset*.
 
