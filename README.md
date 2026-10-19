@@ -50,7 +50,9 @@ En cambio, un **flip-flop tipo D** (imagen de arriba, derecha) es un elemento de
 
 ## Diseño de un Latch Tipo D
 
-Considerando la aclaración, presento un esquema de un **Latch tipo D** que ilustra mejor el comportamiento de retención de datos. Este circuito memoriza el dato de entrada DATA cuando la señal de reloj (CLOCK) está en alto, y mantiene el último estado cuando CLOCK está en bajo. En resumen, el valor (0 ó 1) que haya en DATA pasa a la salida siempre que CLOCK esté a '1' y retiene ese estado al pasar a '0'.  
+Considerando la aclaración, presento un esquema de un **Latch tipo D** que ilustra mejor el comportamiento de retención de datos.  
+
+El valor (0 ó 1) que haya en DATA pasa a la salida siempre que CLOCK esté a '1' y retiene ese estado al pasar a '0'. En otras palabras, mientras CLOCK esté a 1, lo que haya en DATA pasa a la salida siendo **transparente**, pero cuando Clock pasa a 0, conserva el último estado en el que se encontraba DATA.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/true_latch.png)  
 *Evolución de latch SR a latch tipo D.*  
@@ -78,8 +80,8 @@ Ahora veremos cuándo un flip-flop se activa por flanco de subida o de bajada:
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Rising%20%26%20Falling%20edge.png)  
 *Distinción de flip-flops de flanco ascendente (izquierda) y flanco descendente (derecha).*
 
-Si en la señal de clock es directa significa que el flip-flop se activa cuando recibe un flanco de subida (en el instante que pasa de 0 a 1). Esto suele ser lo más común de encontrar.  
-Si en la señal de clock vemos una bolita significa que el flip-flop se activa cuando recibe un flanco descendente (en el instante que pasa de 1 a 0).  
+Si la señal de clock es directa significa que el flip-flop se activa cuando recibe un flanco de subida (en el instante que pasa de 0 a 1). Esto suele ser lo más común de encontrar.  
+Si la señal de clock vemos una bolita significa que el flip-flop se activa cuando recibe un flanco descendente (en el instante que pasa de 1 a 0).  
 
 Esa bolita es la simplificación de una puerta NOT. Tanto si la ves en alguna entrada como en salidas, significa que invierte la lógica de esa señal.  
 
