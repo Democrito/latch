@@ -75,7 +75,8 @@ La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono)
 
 Ahora veremos cuándo un flip-flop se activa por flanco de subida o de bajada:
 
-![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Rising%20%26%20Falling%20edge.png)
+![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Rising%20%26%20Falling%20edge.png)  
+*Distinción de flip-flops de flanco ascendente (izquierda) y flanco descendente (derecha)*
 
 Si en la señal de clock es directa significa que el flip-flop se activa cuando recibe un flanco de subida (en el instante que pasa de 0 a 1). Esto suele ser lo más común de encontrar.  
 Si en la señal de clock vemos una bolita significa que el flip-flop se activa cuando recibe un flanco descendente (en el instante que pasa de 1 a 0).  
