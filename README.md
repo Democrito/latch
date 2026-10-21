@@ -17,7 +17,7 @@ A este tipo de memoria la denomino: "Enclavador fijo", en el sentido de que una 
 En circunstancias normales esto no tendría sentido. Necesitamos de algún modo "cortar" a voluntad la realimentación para evitar tener que apagar el circuito y para solucionarlo añadimos un multiplexor de dos entradas:  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/SR_simplified_OR.png)  
-*Latch/báscula SR.*  
+*Latch, biestable o báscula SR.*  
 
 Este circuito muestra que la retroalimentación combinacional puede emplearse para conservar un estado, funcionando como un mecanismo elemental de almacenamiento de información.
 
@@ -34,7 +34,7 @@ En España es habitual utilizar el término **báscula** o **biestable** para re
 Hay muchos tipos de memorias, entre ellas como la que acabamos de ver tipo **SR** (Set-Reset), y por nombrar otras están las tipo **D**, **T**, **JK**... Pero la que más nos va a interesar de ahora en adelante es la **tipo D**:
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Bascula%20y%20flip-flop%20tipo%20D.png)  
-*Latch/báscula tipo D y flip-flop tipo D.*  
+*Latch, biestable o báscula tipo D y flip-flop tipo D.*  
 
 Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula/biestable (asíncrono) y suele tener una 'c' (clock) o bien 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende por descarte que es la entrada de reloj.  
 
@@ -73,7 +73,7 @@ Para lograr un comportamiento sensible al flanco (como en un flip-flop) utilizar
 La configuración "Maestro-Esclavo" está compuesta por dos latches (asíncrono) pero esta configuración tiene el idéntico comportamiento de un flip-flop tipo D (síncrono).  
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/master_slave_latch%20equal%20D%20flip-flop.png)
-*Ambos conceptos son idénticos, ambos son síncronos.*
+*Ambos conceptos son idénticos, ambos son síncronos, es decir, sensible al flanco.*
 
 Ahora veremos cuándo un flip-flop se activa por flanco de subida o de bajada:
 
