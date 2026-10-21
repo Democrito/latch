@@ -91,14 +91,14 @@ En Icestudio normalmente (a no ser que el icono del módulo lo indique) no podre
 
 La aplicación de los latches **maestro-esclavos** (ahora ya es un flip-flop tipo D en toda regla, es decir, síncrono o lo que es lo mismo: sensible al flanco y no al nivel lógico) lo podemos demostrar mediante la construcción de un **contador ascendente de 4 bits**.
 
-Vamos a crear un contador de 4 bits de la forma más sencilla posible.
+Vamos a crear un contador de 4 bits de la forma más sencilla posible, pero primero hemos de entender el concepto de divisor de frecuencia.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Divider2.png)
 *Divisor de frecuencia. Divide la frecuencia entre 2.*  
 
 Para crear el divisor de frecuencia (divide la frecuencia a la mitad) tenemos que conectar la salida **/Q** a **D**, esto provocará que la frecuencia de entrada que entra por el **clock** salga dividida a la mitad en la salida **Q**.  
 
-Otra forma y mucho más sencilla de comprender el concepto de divisor de frecuencia es cuando lo utilizamos como encendido y apagado con un sólo pulsador.
+Una forma muy sencilla de comprender el concepto de divisor de frecuencia es cuando lo utilizamos como encendido y apagado con un sólo pulsador.
 
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/on-of-one-button.png)  
 *Encendido y apagado de un led con sólo un pulsador.*
