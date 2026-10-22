@@ -3,7 +3,7 @@
 
 En el diseño de circuitos digitales, los **bucles combinacionales** son secuencias de puertas lógicas donde la salida de una puerta se retroalimenta a su entrada, directa o indirectamente. En el mundo de las FPGAs este tipo de diseño se considera problemático debido a la posibilidad de oscilaciones o estados inestables, sin embargo pueden ser utilizados intencionadamente para crear elementos de memoria, como los **latches** y **flip-flops**.  
 
-Este tutorial explora la implementación de elementos de memoria utilizando bucles combinacionales. Comienza con la memoria más simple que existe y termina con ejemplos de contadores asíncronos y síncronos.  
+Este texto explora la implementación de elementos de memoria utilizando bucles combinacionales. Comienza con la memoria más simple que existe y termina con ejemplos de contadores asíncronos y síncronos.  
 
 ## La Memoria más Simple
 
@@ -27,7 +27,7 @@ Para ver este circuito simplificado en su equivalente sólo con puertas lógicas
 
 ## Nomenclaturas
 
-En España es habitual utilizar el término **báscula** o **biestable** para referirse a los **latches** (literalmente, "pestillos"). A lo largo del texto se emplearán ambos términos de forma indistinta. Lo importante es tener presente que estos dispositivos pertenecen al grupo de las **memorias asíncronas**.  
+En España es habitual utilizar el término **báscula** o **biestable** para referirse a los **latches** (literalmente, "pestillos"). A lo largo de este texto se emplearán ambos términos de forma indistinta. Lo importante es tener presente que estos dispositivos pertenecen al grupo de las **memorias asíncronas**.  
 
 ## Memoria tipo D
 
@@ -36,11 +36,11 @@ Hay muchos tipos de memorias, entre ellas como la que acabamos de ver tipo **SR*
 ![](https://github.com/Democrito/latch/blob/main/blob/main/assets/Bascula%20y%20flip-flop%20tipo%20D.png)  
 *Latch, biestable o báscula tipo D y flip-flop tipo D.*  
 
-Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula/biestable (asíncrono) y suele tener una 'c' (clock) o bien 'cp' (clock pulse), o también puede suceder que no lleve nada y se entiende por descarte que es la entrada de reloj.  
+Cuando vemos un triangulito en la entrada Clock es que es un flip-flop (síncrono), y cuando no lo lleva significa que es un latch o báscula/biestable (asíncrono) y suele tener una 'c' (clock) o bien 'cp' (clock pulse), o también puede suceder que no se indique (no hay etiqueta) y se entiende por descarte que es la entrada de reloj.  
 
 ## Distinción entre Flip-Flop y Latch 
 
-Es habitual encontrar documentación técnica en la que el término *flip-flop* se utiliza de forma genérica para referirse a cualquier elemento con capacidad de almacenamiento, incluso cuando, desde un punto de vista técnico se trata de un *latch*. Este uso impreciso de la terminología puede generar confusión. Por ello, a lo largo de este tutorial se distinguirán claramente ambos conceptos y se empleará la nomenclatura adecuada en cada caso.  
+Es habitual encontrar documentación técnica en la que el término *flip-flop* se utiliza de forma genérica para referirse a cualquier elemento con capacidad de almacenamiento, incluso cuando desde un punto de vista técnico se trata de un *latch*. Este uso impreciso de la terminología puede generar confusión. Por ello, a lo largo de este texto se distinguirán claramente ambos conceptos y se empleará la nomenclatura adecuada en cada caso.  
 
 El siguiente paso es diseñar un latch tipo D, pero primero hay que explicar la diferencia entre un latch y un flip-flop:  
 
